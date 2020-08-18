@@ -1,4 +1,3 @@
-
 # Project-1
 What's for dinner?
 Group members: Kim Marziali, Zona Garcia, Sarina Burch, Tyshia Gray
