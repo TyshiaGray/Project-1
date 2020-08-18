@@ -30,6 +30,7 @@
 //         slide.video = new YT.Player(iframe)
 //     })
 // }
+
 $("#ingredients").on("click", function (event) {
     event.preventDefault();
     var delivery = $("#food").val();
@@ -63,6 +64,7 @@ $(document).ready(function () {
         centerMode: true,
         centerPadding: '60px',
         slidesToShow: 3,
+
         responsive: [
             {
                 breakpoint: 768,
