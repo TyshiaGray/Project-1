@@ -5,57 +5,91 @@ $("#ingredients").on("click", function (event) {
     var searchBar = $("#food").val();
     var queryURL = "https://api.edamam.com/search?q=" + searchBar + "&app_id=86916448&app_key=db5527650c463d5a08d5821e727b2b08	&from=0&to=6";
     // var queryURL = "https://api.spoonacular.com/recipes/findbyIngredients?ingredients=" + searchBar + "&apiKey=df8d7ec54f344b5fa40fa028efe7f6e3&number=10";
+    var queryURLVideo = "https://youtube-search1.p.rapidapi.com/" + searchBar + "recipe"
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response);
+    // $.ajax({
+    //     url: queryURL,
+    //     method: "GET"
+    // }).then(function (response) {
+    //     console.log(response);
 
-        for (var i = 0; i < response.hits.length; i++) {
-            var recipe = $("<div class='column is-one-third'></div>");
+    //     for (var i = 0; i < response.hits.length; i++) {
+    //         var recipe = $("<div class='column is-one-third'></div>");
 
-            var title = $("<h2 class='recipeTitle'>")
-            title.text(response.hits[i].recipe.label)
-            $(recipe).append(title);
+    //         var title = $("<h2 class='recipeTitle'>")
+    //         title.text(response.hits[i].recipe.label)
+    //         $(recipe).append(title);
 
-            var images = $("<img class='recipeBox'>");
-            images.attr("src", response.hits[i].recipe.image)
-            $(recipe).append(images);
+    //         var images = $("<img class='recipeBox'>");
+    //         images.attr("src", response.hits[i].recipe.image)
+    //         $(recipe).append(images);
 
-            var formButton = $(`
-            <form target="_blank" action=${response.hits[i].recipe.url} method="get" >
-                <button class="">View Recipe</button>
-            </form>
-            `);
-            $(recipe).append(formButton);
+    //         var formButton = $(`
+    //         <form target="_blank" action=${response.hits[i].recipe.url} method="get" >
+    //             <button class="">View Recipe</button>
+    //         </form>
+    //         `);
+    //         $(recipe).append(formButton);
 
-            $(".newDivs").append(recipe);
-        }
+    //         $(".newDivs").append(recipe);
+    //     }
 
-    })
+    // })
+
+    // $.ajax({
+    //     url: queryURLVideo,
+    //     crossDomain: true,
+    //     method: "GET"
+
+    // }).done(function (data) {
+    //     console.log(data)
+        
+    //     data.items.forEach(function (a, i) {
+    //         var carouselDivEl = $(`
+    //         <div class="slide" style="float: left" style="width: 33.3%" style="margin-left: 10px;">
+    //             <iframe class="video" src=${a.snippet.thumbnails.high.url}></iframe>
+    //         </div>
+    //         `)
+    //         $("#videoCarousel").append(carouselDivEl)
+    //         // $("#slideURL" + i).attr('href', "https://www.youtube.com/watch?v=" + a.id.videoID);
+    //         // $("#slideURL" + i).attr('src', a.snippet.thumbnails.high.url);
+    //     })
+    // }
+
+    // );
 
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://youtube-search1.p.rapidapi.com/" + searchBar + "recipe",
+        "url": "https://youtube-search1.p.rapidapi.com/" + searchBar + "recipes",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "youtube-search1.p.rapidapi.com",
-            "x-rapidapi-key": "5c525ff9dbmshcd1c1d67651b498p15b862jsnca5db7a0546a"
+            "x-rapidapi-key": "0fd50d851fmsh7f2d3e4acffe9dbp1d2318jsn39dbd8c577e9"
         }
     }
-
+    
     $.ajax(settings).done(function (response) {
         console.log(response);
+        response.items.forEach(function (val) {
+            var carouselDivEl = $(`
+            <div class="slide" style="float: left" style="width: 33.3%" style="margin-left: 10px;">
+                <iframe class="video" src="https://www.youtube.com/embed?v=${val.id.videoId}"></iframe>
+            </div>
+            `)
+            $("#videoCarousel").append(carouselDivEl)
+            // $("#slideURL" + i).attr('href', "https://www.youtube.com/watch?v=" + a.id.videoID);
+            // $("#slideURL" + i).attr('src', a.snippet.thumbnails.high.url);
+        })
     });
+
 });
 
+// set carousel 
 $(document).ready(function () {
 
-
     $('.center').slick({
-        
+
         centerMode: true,
         centerPadding: '60px',
         slidesToShow: 3,
@@ -86,7 +120,9 @@ $(document).ready(function () {
 
 });
 
-$("#ingredients").on("click", function(events) {
+
+// set local storage
+$("#ingredients").on("click", function (events) {
     var foodIngredients = $("#food").val();
     localStorage.setItem("foodIngredients", foodIngredients)
 })
