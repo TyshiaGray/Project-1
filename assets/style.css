@@ -1,11 +1,12 @@
 .navbar {
- background-color:#B09AC3;
+ background-color:#13d4f2;
  opacity: 0.8;
- 
+ height: 200px;
+ color: azure;
 }
 
 body, html {
-    background-image: url("https://cdn.decorpad.com/photos/2018/08/21/orange-tropical-pattern-modern-yellow-lemons-wallpaper.jpeg");
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/food.png");
     background-repeat: no-repeat, no-repeat;
     width: 100%;
     height: 100%;
@@ -13,9 +14,35 @@ body, html {
 }
 
 h1 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-family: 'Acme', sans-serif;
+    
 }
 
 .slide {
     padding: 10px;
+}
+
+.title {
+    color: #f21374;
+    padding: 30px;
+    font-size: 40px;
+    display: block;
+}
+
+#searchBar {
+   padding: 30px;
+}
+
+.fa-utensils {
+    color: #f21374;
+}
+
+.recipeBox {
+    border: #f21374 10px solid;  
+}
+
+.recipeTitle {
+    font-family: 'Acme', sans-serif;
+    font-size: 25px;
+    color: #f21374;
 }

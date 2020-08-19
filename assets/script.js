@@ -15,11 +15,11 @@ $("#ingredients").on("click", function (event) {
         for (var i = 0; i < response.hits.length; i++) {
             var recipe = $("<div class='column is-one-third'></div>");
 
-            var title = $("<h2>")
+            var title = $("<h2 class='recipeTitle'>")
             title.text(response.hits[i].recipe.label)
             $(recipe).append(title);
 
-            var images = $("<img>");
+            var images = $("<img class='recipeBox'>");
             images.attr("src", response.hits[i].recipe.image)
             $(recipe).append(images);
 
