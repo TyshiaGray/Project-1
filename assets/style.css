@@ -1,20 +1,21 @@
-.navbar {
+/* .navbar {
  background-color:#B09AC3;
- opacity: 0.8;
- 
-}
+ opacity: 0.9;
+  */
+/* } */
 
 body, html {
-    background-image: url("https://cdn.wallpapersafari.com/26/14/EmPAh7.jpg");
+    background-image: url("http://hd-wallpapers.ucoz.com/_ph/10/256007888.jpg");
     background-repeat: no-repeat, no-repeat;
     width: 100%;
     height: 100%;
     background-size: cover;
 }
 
-.title {
-    font-size: 50px;
-    font-family: cursive;
+h1, .subtitle {
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif */
+    font-family: 'Lobster', cursive;
+    font-weight: bolder;
     
 }
 
@@ -28,6 +29,46 @@ img {
     
 }
 
-.card {
-    background-color: rgb(180, 179, 179);
+
+
+#title {
+    color: black;
+    text-align: center;
+}
+
+.title {
+    font-size: 75px;
+}
+
+/* .hero {
+    opacity: 0.9;
+    background-image: url("http://hd-wallpapers.ucoz.com/_ph/10/256007888.jpg");
+    background-repeat: no-repeat, no-repeat;
+    width: 100%;
+    height: 75%;
+    background-size: cover;
+} */
+
+/* .newDivs {
+    margin-top: 10px;
+} */
+
+#ingredients {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+button {
+    margin-top: -15px;
+    margin-bottom: 5px;
+    color: black;
+}
+
+#recipeImages {
+    border: #656460 5px solid;
+    width: 350px;
+    height: 375px;
+    margin-left: 60px;
+    
 }
