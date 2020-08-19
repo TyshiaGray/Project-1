@@ -13,27 +13,32 @@ $("#ingredients").on("click", function (event) {
         console.log(response);
 
         for (var i = 0; i < response.hits.length; i++) {
-            var recipe = $("<div class='column is-one-third'></div>");
+            var recipe = $("<div class='column is-one-third image is-text-centered'></div>");
 
-            var title = $("<h2>")
+            var title = $("<h2 class='title is-5 has-text-centered'>")
             title.text(response.hits[i].recipe.label)
             $(recipe).append(title);
 
-            var images = $("<img>");
-            images.attr("src", response.hits[i].recipe.image)
-            $(recipe).append(images);
-
             var formButton = $(`
-            <form target="_blank" action=${response.hits[i].recipe.url} method="get" >
-                <button class="">View Recipe</button>
+            <form target="_blank" action=${response.hits[i].recipe.url} method="get" class="has-text-centered">
+                <button class="button is-dark is-outlined">View Recipe</button>
             </form>
             `);
             $(recipe).append(formButton);
 
-            $(".newDivs").append(recipe);
-        }
+            var images = $("<img id='recipeImages'>");
+            images.attr("src", response.hits[i].recipe.image)
+            $(recipe).append(images);
+          
 
-    })
+            $(".newDivs").append(recipe);
+            
+            $("#ingredients").click(function () {
+            $(".newDivs").empty();
+        })
+        }
+       
+    });
 
     var settings = {
         "async": true,
