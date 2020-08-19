@@ -5,6 +5,7 @@ $("#ingredients").on("click", function (event) {
     var searchBar = $("#food").val();
     var queryURL = "https://api.edamam.com/search?q=" + searchBar + "&app_id=86916448&app_key=db5527650c463d5a08d5821e727b2b08	&from=0&to=6";
     // var queryURL = "https://api.spoonacular.com/recipes/findbyIngredients?ingredients=" + searchBar + "&apiKey=df8d7ec54f344b5fa40fa028efe7f6e3&number=10";
+    var queryURLVideo = "https://youtube-search1.p.rapidapi.com/" + searchBar + "recipe"
 
     $.ajax({
         url: queryURL,
@@ -43,24 +44,44 @@ $("#ingredients").on("click", function (event) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://youtube-search1.p.rapidapi.com/" + searchBar + "recipe",
+        "url": "https://youtube-search1.p.rapidapi.com/" + searchBar + "recipes&format=5",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "youtube-search1.p.rapidapi.com",
-            "x-rapidapi-key": "5c525ff9dbmshcd1c1d67651b498p15b862jsnca5db7a0546a"
+            "x-rapidapi-key": "0fd50d851fmsh7f2d3e4acffe9dbp1d2318jsn39dbd8c577e9"
         }
     }
+    
+    // $.ajax(settings).done(function (response) {
+    //     console.log(response);
+    //     for(var i=0; i < 6; i++) {
+    //         var carouselDivEl = $(`
+    //         <div class="slide" style="float: left" style="width: 33.3%" style="margin-left: 10px;">
+    //             <iframe class="video" src="https://www.youtube.com/embed/v=${response.items[i].id.videoId}"></iframe>
+    //         </div>
+    //         `)
+    //         $("#videoCarousel").append(carouselDivEl)
 
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
+    //     }
+    // });
+
+    $.ajax({
+        url: baseURL + path + apikey,
+        crossDomain: true
+    }).done(
+        function (data) {
+            data.items.forEach( (a, i) => {
+                $("#iframe" + i).attr('src', "https://www.youtube.com/embed/" + a.id.videoId);
+            })
+        }
+    );
 });
 
+// set carousel 
 $(document).ready(function () {
 
-
     $('.center').slick({
-        
+
         centerMode: true,
         centerPadding: '60px',
         slidesToShow: 3,
@@ -90,3 +111,10 @@ $(document).ready(function () {
 
 
 });
+
+
+// set local storage
+$("#ingredients").on("click", function (events) {
+    var foodIngredients = $("#food").val();
+    localStorage.setItem("foodIngredients", foodIngredients)
+})
