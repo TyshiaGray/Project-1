@@ -16,20 +16,21 @@ Group members: Sarina Burch, Zona Garcia, Tyshia Gray, Kim Marziali
 
 ## Task To Be Completed:
 - [ X ] Create needed files: index.html file, README file, assets folder to include: images, style.css, script.js 
-- [ X ] Create keys for used APIs: Spoonacular and YouTube
+- [ X ] Create keys for used APIs: edamam and YouTube
 - [ X ] Ensure viability for keys/links
 - [ X ] Pseudocode application and layout
-- [ X ] Create Jumbotron
-- [ X ] Create search bar to search for a recipe and ingrediants
+- [ X ] Create hero display (Bulma)
+- [ X ] Create search bar to search for a recipe and video
 - [ X ] Create carousel to hold YouTube search results
 - [ X ] Search history saves to LocalStorage
-- [   ] User search to display possible recipes
-- [   ] Code carousel to display YouTube search results
-- [   ] Lorem Lorem Lorem
-- [   ] Lorem Lorem Lorem
+- [ X ] User search to display possible recipes
+- [ X ] Code carousel to display YouTube search results
+- [ X ] Styled carousel
+
 
 ## Link to Website:
-[Name of Link you are going to paste](Link of github page.io)
+https://github.com/TyshiaGray/Project-1
 
-![Alt text for image](https://github.com/[githubusername]/[name-of-repo]/blob/master/[folder-name-of-images]/[name-of-pic (ex. something.png)])
-![Alt text for image](https://github.com/[githubusername]/[name-of-repo]/blob/master/[folder-name-of-images]/[name-of-pic (ex. something.png)])
+![Before Search](https://github.com/TyshiaGray/Project-1/blob/master/assets/Before_search.png)
+![Search results recipes](https://github.com/TyshiaGray/Project-1/blob/master/assets/Search_results_recipes.png)
+![Search results video](https://github.com/TyshiaGray/Project-1/blob/master/assets/Before_search_video.png)
