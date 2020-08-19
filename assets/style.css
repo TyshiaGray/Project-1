@@ -5,17 +5,29 @@
 }
 
 body, html {
-    background-image: url("https://cdn.decorpad.com/photos/2018/08/21/orange-tropical-pattern-modern-yellow-lemons-wallpaper.jpeg");
+    background-image: url("https://cdn.wallpapersafari.com/26/14/EmPAh7.jpg");
     background-repeat: no-repeat, no-repeat;
     width: 100%;
     height: 100%;
     background-size: cover;
 }
 
-h1 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+.title {
+    font-size: 50px;
+    font-family: cursive;
+    
 }
 
 .slide {
     padding: 10px;
+    border: black;
+    border-width: 10px; 
+}
+img {
+    border: black solid 6px;
+    
+}
+
+.card {
+    background-color: rgb(180, 179, 179);
 }
