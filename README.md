@@ -1,12 +1,12 @@
 # Project-1
 What's for dinner?
-Group members: Kim Marziali, Zona Garcia, Sarina Burch, Tyshia Gray
+Group members: Sarina Burch, Zona Garcia, Tyshia Gray, Kim Marziali  
 
 * This project is to create an application that will allow a user to:
     - Search for recipe
     - The search will provide a search result consisting of 
         - possible recipes
-        - top YouTube with ingredient keyword
+        - YouTube videos from keyword
     - Ability to store search history 
 
 ## The User Story:
@@ -21,10 +21,10 @@ Group members: Kim Marziali, Zona Garcia, Sarina Burch, Tyshia Gray
 - [ X ] Pseudocode application and layout
 - [ X ] Create Jumbotron
 - [ X ] Create search bar to search for a recipe and ingrediants
-- [   ] Create carousel to hold YouTube search results
-- [   ] Search history saves to LocalStorage
-- [   ] Lorem Lorem Lorem
-- [   ] Lorem Lorem Lorem
+- [ X ] Create carousel to hold YouTube search results
+- [ X ] Search history saves to LocalStorage
+- [   ] User search to display possible recipes
+- [   ] Code carousel to display YouTube search results
 - [   ] Lorem Lorem Lorem
 - [   ] Lorem Lorem Lorem
 

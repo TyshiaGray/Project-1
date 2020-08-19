@@ -89,5 +89,4 @@ $(document).ready(function () {
 $("#ingredients").on("click", function(events) {
     var foodIngredients = $("#food").val();
     localStorage.setItem("foodIngredients", foodIngredients)
-
 })
