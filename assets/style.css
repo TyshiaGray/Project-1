@@ -1,19 +1,10 @@
-/* .navbar {
- background-color:#B09AC3;
- opacity: 0.9;
-  */
-/* } */
-
 body, html {
     background-image: url("http://hd-wallpapers.ucoz.com/_ph/10/256007888.jpg");
     background-repeat: no-repeat, no-repeat;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
+    background-attachment: fixed;
 }
 
 h1, .subtitle {
-    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif */
     font-family: 'Lobster', cursive;
     font-weight: bolder;
     
@@ -33,19 +24,6 @@ h1, .subtitle {
     font-size: 75px;
 }
 
-/* .hero {
-    opacity: 0.9;
-    background-image: url("http://hd-wallpapers.ucoz.com/_ph/10/256007888.jpg");
-    background-repeat: no-repeat, no-repeat;
-    width: 100%;
-    height: 75%;
-    background-size: cover;
-} */
-
-/* .newDivs {
-    margin-top: 10px;
-} */
-
 #ingredients {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -64,4 +42,17 @@ button {
     height: 375px;
     margin-left: 60px;
     
+}
+
+#videoCarousel {
+    background-color: #656460 5px solid;
+    width: 75%; 
+    margin: 0 auto;
+    margin-top: 50px;
+
+}
+
+.slick-arrow {
+    border-radius: 9999px;
+    background-color: #656460;
 }
