@@ -7,56 +7,39 @@ $("#ingredients").on("click", function (event) {
     // var queryURL = "https://api.spoonacular.com/recipes/findbyIngredients?ingredients=" + searchBar + "&apiKey=df8d7ec54f344b5fa40fa028efe7f6e3&number=10";
     var queryURLVideo = "https://youtube-search1.p.rapidapi.com/" + searchBar + "recipe"
 
-    // $.ajax({
-    //     url: queryURL,
-    //     method: "GET"
-    // }).then(function (response) {
-    //     console.log(response);
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
 
-    //     for (var i = 0; i < response.hits.length; i++) {
-    //         var recipe = $("<div class='column is-one-third'></div>");
+        for (var i = 0; i < response.hits.length; i++) {
+            var recipe = $("<div class='column is-one-third image is-text-centered'></div>");
 
-    //         var title = $("<h2 class='recipeTitle'>")
-    //         title.text(response.hits[i].recipe.label)
-    //         $(recipe).append(title);
+            var title = $("<h2 class='title is-5 has-text-centered'>")
+            title.text(response.hits[i].recipe.label)
+            $(recipe).append(title);
 
-    //         var images = $("<img class='recipeBox'>");
-    //         images.attr("src", response.hits[i].recipe.image)
-    //         $(recipe).append(images);
+            var formButton = $(`
+            <form target="_blank" action=${response.hits[i].recipe.url} method="get" class="has-text-centered">
+                <button class="button is-dark is-outlined">View Recipe</button>
+            </form>
+            `);
+            $(recipe).append(formButton);
 
-    //         var formButton = $(`
-    //         <form target="_blank" action=${response.hits[i].recipe.url} method="get" >
-    //             <button class="">View Recipe</button>
-    //         </form>
-    //         `);
-    //         $(recipe).append(formButton);
+            var images = $("<img id='recipeImages'>");
+            images.attr("src", response.hits[i].recipe.image)
+            $(recipe).append(images);
+          
 
-    //         $(".newDivs").append(recipe);
-    //     }
-
-    // })
-
-    // $.ajax({
-    //     url: queryURLVideo,
-    //     crossDomain: true,
-    //     method: "GET"
-
-    // }).done(function (data) {
-    //     console.log(data)
-        
-    //     data.items.forEach(function (a, i) {
-    //         var carouselDivEl = $(`
-    //         <div class="slide" style="float: left" style="width: 33.3%" style="margin-left: 10px;">
-    //             <iframe class="video" src=${a.snippet.thumbnails.high.url}></iframe>
-    //         </div>
-    //         `)
-    //         $("#videoCarousel").append(carouselDivEl)
-    //         // $("#slideURL" + i).attr('href', "https://www.youtube.com/watch?v=" + a.id.videoID);
-    //         // $("#slideURL" + i).attr('src', a.snippet.thumbnails.high.url);
-    //     })
-    // }
-
-    // );
+            $(".newDivs").append(recipe);
+            
+            $("#ingredients").click(function () {
+            $(".newDivs").empty();
+        })
+        }
+       
+    });
 
     var settings = {
         "async": true,
