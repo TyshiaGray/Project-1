@@ -52,65 +52,31 @@ $("#ingredients").on("click", function (event) {
         }
     }
     
-    // $.ajax(settings).done(function (response) {
-    //     console.log(response);
-    //     for(var i=0; i < 6; i++) {
-    //         var carouselDivEl = $(`
-    //         <div class="slide" style="float: left" style="width: 33.3%" style="margin-left: 10px;">
-    //             <iframe class="video" src="https://www.youtube.com/embed/v=${response.items[i].id.videoId}"></iframe>
-    //         </div>
-    //         `)
-    //         $("#videoCarousel").append(carouselDivEl)
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+        for(var i=0; i < 10; i++) {
+            var carouselDivEl = $(`
+            <div class="slide" style="float: left" style="width: 33.3%" style="margin-left: 10px;">
+                <iframe class="video" src="https://www.youtube.com/embed/${response.items[i].id.videoId}"></iframe>
+            </div>
+            `)
+            $("#videoCarousel").append(carouselDivEl)
 
-    //     }
-    // });
-
-    $.ajax({
-        url: baseURL + path + apikey,
-        crossDomain: true
-    }).done(
-        function (data) {
-            data.items.forEach( (a, i) => {
-                $("#iframe" + i).attr('src', "https://www.youtube.com/embed/" + a.id.videoId);
-            })
         }
-    );
-});
 
-// set carousel 
-$(document).ready(function () {
-
-    $('.center').slick({
-
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
-
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 1
-                }
-            }
-        ]
+        $("#videoCarousel").slick({
+            infinite: true, 
+            slidesToShow: 4,
+            dots: true,
+         //   slidesToScroll: 6,
+        })
     });
 
 
-
 });
+
+// set carousel 
+
 
 
 // set local storage

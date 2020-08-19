@@ -65,3 +65,13 @@ button {
     margin-left: 60px;
     
 }
+
+#videoCarousel {
+    background-color: #656460 5px solid;
+width: 75%; 
+    margin: 0 auto;
+}
+
+.slick-arrow {
+    background-color: black;
+}
