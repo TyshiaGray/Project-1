@@ -61,7 +61,7 @@ $("#ingredients").on("click", function (event) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://youtube-search1.p.rapidapi.com/" + searchBar + "recipes",
+        "url": "https://youtube-search1.p.rapidapi.com/" + searchBar + "recipes&format=5",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "youtube-search1.p.rapidapi.com",
@@ -69,20 +69,29 @@ $("#ingredients").on("click", function (event) {
         }
     }
     
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-        response.items.forEach(function (val) {
-            var carouselDivEl = $(`
-            <div class="slide" style="float: left" style="width: 33.3%" style="margin-left: 10px;">
-                <iframe class="video" src="https://www.youtube.com/embed?v=${val.id.videoId}"></iframe>
-            </div>
-            `)
-            $("#videoCarousel").append(carouselDivEl)
-            // $("#slideURL" + i).attr('href', "https://www.youtube.com/watch?v=" + a.id.videoID);
-            // $("#slideURL" + i).attr('src', a.snippet.thumbnails.high.url);
-        })
-    });
+    // $.ajax(settings).done(function (response) {
+    //     console.log(response);
+    //     for(var i=0; i < 6; i++) {
+    //         var carouselDivEl = $(`
+    //         <div class="slide" style="float: left" style="width: 33.3%" style="margin-left: 10px;">
+    //             <iframe class="video" src="https://www.youtube.com/embed/v=${response.items[i].id.videoId}"></iframe>
+    //         </div>
+    //         `)
+    //         $("#videoCarousel").append(carouselDivEl)
 
+    //     }
+    // });
+
+    $.ajax({
+        url: baseURL + path + apikey,
+        crossDomain: true
+    }).done(
+        function (data) {
+            data.items.forEach( (a, i) => {
+                $("#iframe" + i).attr('src', "https://www.youtube.com/embed/" + a.id.videoId);
+            })
+        }
+    );
 });
 
 // set carousel 
