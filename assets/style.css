@@ -24,13 +24,14 @@ h1 {
 
 .title {
     color: #f21374;
-    padding: 30px;
+    padding-top: 80px;
+    padding-left: 80px;
     font-size: 40px;
     display: block;
 }
 
 #searchBar {
-   padding: 30px;
+   padding: 80px;
 }
 
 .fa-utensils {
