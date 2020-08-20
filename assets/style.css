@@ -40,7 +40,7 @@ button {
     border: #656460 5px solid;
     width: 350px;
     height: 375px;
-    margin-left: 60px;
+    margin-left: 30px;
     
 }
 
@@ -55,4 +55,12 @@ button {
 .slick-arrow {
     border-radius: 9999px;
     background-color: #656460;
+}
+
+#recipeSection {
+    background-color: rgba(255, 255, 255, 0.7);   
+}
+
+#subT {
+    background-color: rgba(255, 255, 255, 0.7);   
 }

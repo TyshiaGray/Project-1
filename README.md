@@ -11,8 +11,8 @@ Group members: Sarina Burch, Zona Garcia, Tyshia Gray, Kim Marziali
 
 ## The User Story:
 > AS A busy adult with limited time 
-> I WANT an application that will allow me to search for a recipe and give me suggetions with how-to videos
-> SO THAT choosing dinner will be easier
+> I WANT an application that will allow me to search for a recipe using ingredients that can be found in our pantry and give me suggetions with how-to videos
+> SO THAT choosing a meal will be easier
 
 ## Task To Be Completed:
 - [ X ] Create needed files: index.html file, README file, assets folder to include: images, style.css, script.js 
@@ -30,6 +30,7 @@ Group members: Sarina Burch, Zona Garcia, Tyshia Gray, Kim Marziali
 
 ## Link to Website:
 https://github.com/TyshiaGray/Project-1
+https://tyshiagray.github.io/Project-1/
 
 ![Before Search](https://github.com/TyshiaGray/Project-1/blob/master/assets/Before_search.png)
 ![Search results recipes](https://github.com/TyshiaGray/Project-1/blob/master/assets/Search_results_recipes.png)
