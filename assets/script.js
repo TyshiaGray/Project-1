@@ -50,7 +50,7 @@ $("#ingredients").on("click", function (event) {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "youtube-search1.p.rapidapi.com",
-            "x-rapidapi-key": "e4e24248e3msh53ace1a406be08cp1234e9jsn4644a388d940"
+            "x-rapidapi-key": "5c525ff9dbmshcd1c1d67651b498p15b862jsnca5db7a0546a"
         }
     }
 
